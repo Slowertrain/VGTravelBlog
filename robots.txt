@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://Video_Game_Travel_Blog/sitemap.xml
