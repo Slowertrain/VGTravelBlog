@@ -1,0 +1,52 @@
+media:
+  input: public/images
+  output: /VGTravelBlog/images
+
+settings:
+  content:
+    merge: true
+
+content:
+  - name: posts
+    label: Blog Posts
+    type: collection
+    path: src/content/blog
+    format: yaml-frontmatter
+    filename:
+      template: "{title}.md"
+      field: create
+    view:
+      primary: title
+      fields: [title, pubDate]
+      sort: [pubDate, title]
+      default:
+        sort: pubDate
+        order: desc
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+
+      - name: description
+        label: Description
+        type: text
+        required: true
+
+      - name: pubDate
+        label: Publication Date
+        type: date
+        required: true
+
+      - name: updatedDate
+        label: Updated Date
+        type: date
+
+      - name: body
+        label: Article
+        type: rich-text
+        options:
+          format: markdown
+          media: true
+          path: public/images
+          rename: true
